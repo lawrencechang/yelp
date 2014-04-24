@@ -3,10 +3,17 @@
 import json;
 
 num_lines = 0;
-with open('../yelp_academic_dataset.json') as yelp_file:
+yelp_data = [];
+filename = '../yelp_academic_dataset.json'
+
+print 'Loading '+filename+' ...';
+
+with open(filename) as yelp_file:
     for line in yelp_file:
         num_lines += 1;
         #print line;
+        yelp_data.append(json.loads(line));
     print 'Number of lines: '+str(num_lines);
-    #yelp_data = json.load(yelp_file);
+    
+    
     
