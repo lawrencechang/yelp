@@ -4,16 +4,17 @@ Yelp
 Yelp graph characterization project for CS 246 Web Info Management with Junghoo Cho, at UCLA
 
 
-Pickle Contents after running mappings.py
+###Pickle Contents after running mappings.py
 
-business_to_review_ids.p = dictionary
+business_to_review_ids.p = dictionary  
 business id -> [review id] list
 
-user_to_review_ids.p = dictionary
+user_to_review_ids.p = dictionary  
 user id -> [review_id] list
 
-businesses.p = dictionary
+businesses.p = dictionary  
 business id ->
+```
   {
     'type': 'business',
     'business_id': (a unique identifier for this business),
@@ -32,9 +33,11 @@ business id ->
     'schools': (nearby universities),
     'url': (yelp url)
   }
+```
 
-reviews.p = list
+reviews.p = list  
 review id is the list index
+```
   {
     'type': 'review',
     'business_id': (the identifier of the reviewed business),
@@ -48,9 +51,11 @@ review id is the list index
       'cool': (count of cool votes)
     }
   }
+```
 
-users.p = dictionary
+users.p = dictionary  
 user id ->
+```
   {
     'type': 'user',
     'user_id': (unique user identifier),
@@ -63,3 +68,4 @@ user id ->
       'cool': (count of cool votes across all reviews)
     }
   }
+```
