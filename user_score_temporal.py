@@ -62,7 +62,7 @@ def get_latest_and_age_scores(oldest_per_user, youngest_per_user):
     youngest_per_user: {user_id: int} - user id to days since oldest review.
 
   Returns:
-    ({user_id: int}, {user_id: int}) - mappings of users to the scores based
+    ({user_id: float}, {user_id: float}) - mappings of users to the scores based
       on temporal data.
   '''
   num_users = len(oldest_per_user)
