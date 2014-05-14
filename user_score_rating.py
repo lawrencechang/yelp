@@ -48,7 +48,7 @@ for user in users:
 		# How are there no reviews for this user? Something went wrong.
 		correlation_score = 0;
 	else:
-		correlation_score = 1.0 - ((total_diff / num_reviews)/16);
+		correlation_score = 1.0 - ((total_diff / float(num_reviews)) / 16.0);
 	
 	users_score_correlation[user] = correlation_score;
 	
