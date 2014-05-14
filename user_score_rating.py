@@ -43,12 +43,12 @@ for user in users:
 		num_reviews += 1;
 		total_diff += diff_squared
 		
-	# Score of 1 is the worst, 0 is the best
+	# Score of 0 is the worst, 1 is the best
 	if num_reviews == 0:
 		# How are there no reviews for this user? Something went wrong.
-		correlation_score = 1.0;
+		correlation_score = 0;
 	else:
-		correlation_score = (total_diff / float(num_reviews)) / 16.0;
+		correlation_score = 1.0 - ((total_diff / num_reviews)/16);
 	
 	users_score_correlation[user] = correlation_score;
 	
