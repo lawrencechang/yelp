@@ -45,6 +45,8 @@ if __name__ == '__main__':
   upvote_scores = pickle.load(open('users_score_upvotes.p', 'rb'))
 
   (user_scores, user_scores_sorted) = get_user_scores()
+  print "Top 10 users:"
+  print str(user_scores_sorted[:10])
 
   pickle.dump(user_scores, open('user_scores.p', 'wb'))
   pickle.dump(user_scores_sorted, open('user_scores_sorted.p', 'wb'))
