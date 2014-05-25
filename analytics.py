@@ -28,7 +28,8 @@ print
 print "Name\tID\tCount Score\tStars"
 k_counter = 0
 for auth, count in authorities_sorted:
-  if 'Restaurants' not in businesses[auth]['categories']:
+  if (('Restaurants' not in businesses[auth]['categories']) and
+      ('Food' not in businesses[auth]['categories'])):
     continue
   count_total += count
   star_total += float(businesses[auth]['stars'])
