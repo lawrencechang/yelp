@@ -26,11 +26,18 @@ print "Authorities derived from Top %d Hub Users" % find_authorities.k
 
 print
 print "Name\tID\tCount Score\tStars"
-for auth, count in authorities_sorted[:k]:
+k_counter = 0
+for auth, count in authorities_sorted:
+  if 'Restaurants' not in businesses[auth]['categories']:
+    continue
   count_total += count
   star_total += float(businesses[auth]['stars'])
   print "%s\t%s\t%s\t%s" % (businesses[auth]['name'], auth,
                             count, businesses[auth]['stars'])
+  k_counter += 1;
+  if k_counter > k:
+    break;
+
 print
 print "Average Stars of Top %d: %g" % (k, star_total / k)
 print "Average Count Score of Top %d: %g" % (k, count_total / k)
