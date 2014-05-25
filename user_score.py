@@ -44,6 +44,7 @@ if __name__ == '__main__':
   correlation_scores = pickle.load(open('users_score_correlation.p', 'rb'))
   upvote_scores = pickle.load(open('users_score_upvotes.p', 'rb'))
 
+  print SCORE_WEIGHTS
   (user_scores, user_scores_sorted) = get_user_scores()
   print "Top 10 users:"
   print str(user_scores_sorted[:10])
