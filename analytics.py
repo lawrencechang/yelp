@@ -36,7 +36,7 @@ for auth, count in authorities_sorted:
   print "%s\t%s\t%s\t%s" % (businesses[auth]['name'], auth,
                             count, businesses[auth]['stars'])
   k_counter += 1;
-  if k_counter > k:
+  if k_counter >= k:
     break;
 
 print

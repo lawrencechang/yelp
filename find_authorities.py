@@ -55,7 +55,7 @@ if __name__ == '__main__':
         #print "Got a multiple!";
 
     count += 1;
-    if count > k:
+    if count >= k:
       break;
 
   sorted_tuple = sorted(authorities.iteritems(),key=operator.itemgetter(1),reverse=True);
