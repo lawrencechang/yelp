@@ -7,7 +7,7 @@ import cPickle as pickle;
 import operator;
 import os.path
 
-k = 100;
+k = 1;
 
 if __name__ == '__main__':
   user_scores_filename = "user_scores_sorted.p";
@@ -34,10 +34,12 @@ if __name__ == '__main__':
     review_ids_to_businesses = []
 
     for review in reviews:
-      review_ids_to_businesses.append(review['business_id'])
+      review_ids_to_businesses.append((review['business_id'],
+                                       float(review['stars'])))
     pickle.dump(review_ids_to_businesses,
                 open('review_ids_to_businesses.p', 'wb'))
 
+  # [(business_id, star_rating)]
   review_ids_to_businesses = pickle.load(open('review_ids_to_businesses.p', 'rb'))
 
 
@@ -47,11 +49,13 @@ if __name__ == '__main__':
   for user in users_ranked:
     user_id = user[0];
     for review_id in user_to_review_ids[user_id]:
-      business_id = review_ids_to_businesses[review_id];
+      business_id = review_ids_to_businesses[review_id][0]
+      star_rating = review_ids_to_businesses[review_id][1]
+
       if authorities.get(business_id) == None:
-        authorities[business_id] = 1;
+        authorities[business_id] = (star_rating - 1) / 4.0;
       else:
-        authorities[business_id] += 1;
+        authorities[business_id] += (star_rating - 1) / 4.0;
         #print "Got a multiple!";
 
     count += 1;
