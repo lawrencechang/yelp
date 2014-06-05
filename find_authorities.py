@@ -7,7 +7,7 @@ import cPickle as pickle;
 import operator;
 import os.path
 
-k = 300;
+k = 50;
 
 if __name__ == '__main__':
   user_scores_filename = "user_scores_sorted.p";

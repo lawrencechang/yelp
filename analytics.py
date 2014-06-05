@@ -55,8 +55,9 @@ for auth, count in authorities_sorted:
   if k_counter < top_auth_k:
     count_total += count
     star_total += float(businesses[auth]['stars'])
-    print "%s\t%s\t%s\t%s" % (businesses[auth]['name'], auth,
-                              count, businesses[auth]['stars'])
+    print "%s\t%s\t%s\t%s\t%s" % (businesses[auth]['name'], auth,
+                                  businesses[auth]['city'],count, 
+                                  businesses[auth]['stars'])
 
   k_counter += 1
 
