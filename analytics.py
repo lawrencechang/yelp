@@ -25,7 +25,7 @@ print
 print "Authorities derived from Top %d Hub Users" % find_authorities.k
 
 print
-print "Name\tID\tCount Score\tStars"
+print "Name\tID\tCity\tCount Score\tStars"
 k_counter = 0
 for auth, count in authorities_sorted:
   if (('Restaurants' not in businesses[auth]['categories']) and
@@ -33,8 +33,9 @@ for auth, count in authorities_sorted:
     continue
   count_total += count
   star_total += float(businesses[auth]['stars'])
-  print "%s\t%s\t%s\t%s" % (businesses[auth]['name'], auth,
-                            count, businesses[auth]['stars'])
+  print "%s\t%s\t%s\t%s\t%s" % (businesses[auth]['name'], auth,
+                                businesses[auth]['city'],count, 
+                                businesses[auth]['stars'])
   k_counter += 1;
   if k_counter >= k:
     break;
