@@ -33,12 +33,12 @@ for business_tuple in businesses_sorted:
   		
 print
 print "Let's put a threshold of review counts, just to help trim the list."
-threshold = 100;
+threshold = 500;
 print "Threshold of "+str(threshold)+" reviews.";
 print "Name\tID\tCity\tCount Score\tStars"
 total_count = 0;
 counter = 0;
-while total_count < total:
+while total_count < total and counter < len(businesses_sorted):
 	business_tuple = businesses_sorted[counter];
 	business_id = business_tuple[0];
 	business = business_tuple[1];
